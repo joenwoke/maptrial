@@ -23,6 +23,10 @@
           zoom: 4, 
           center: location
         });
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
       }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwIZwxBIozXFxFfPWbWEQ9YMPdh5edcRU&callback=initMap"></script>
