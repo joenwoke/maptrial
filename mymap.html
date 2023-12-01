@@ -1,33 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 500px;
-        width: 100%
-      }
-    </style>
+    <title>Simple Marker</title>
+    <!-- The callback parameter is required, so we use console.debug as a noop -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwIZwxBIozXFxFfPWbWEQ9YMPdh5edcRU&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
+    <link rel="stylesheet" href="./style.css"/>
   </head>
   <body>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var location = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4, 
-          center: location
-        });
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
-      }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwIZwxBIozXFxFfPWbWEQ9YMPdh5edcRU&callback=initMap"></script>
+    <gmp-map center="41.8349609375,-87.62698364257812" zoom="14" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker position="41.8349609375,-87.62698364257812" title="My location">
+      </gmp-advanced-marker>
+    </gmp-map>
   </body>
 </html>
